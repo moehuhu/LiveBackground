@@ -5,10 +5,10 @@ import moment from 'moment'
 import Typewriter from 'typewriter-effect';
 import './style.less'
 import ThreeDBackground from './components/ThreeBackground'
+import ReactSpringBackground from './components/ReactSpringBackground'
 const App = () => {
     const [time, setTime] = useState('')
     useInterval(() => { setTime(moment().format('HH:mm:ss')) }, 500)
-    useTimeout(() => window.location.reload(), 1200000)
     const taskbar = (component) => <div className="taskbar"  >
         <div className='components'>{component}</div>
         <div className="taskbar-highlight" />
@@ -20,8 +20,8 @@ const App = () => {
         <div className="sidebar-blur" />
     </div>
     const strings = [
-        '天气转凉 寒潮来了',
-        '多喝热水 增添衣物',
+        '春天到了 气温波动',
+        '调整衣物 多喝热水',
         '不要在无关的直播间刷主播',
         '理性消费 鼓励白嫖 欢迎辣条',
         '打多了主播点名批评',
@@ -42,7 +42,7 @@ const App = () => {
     return <div className="live-background">
         {sidebar()}
         {taskbar(<>{typeWriter}{timeClock}</>)}
-        <ThreeDBackground />
+        <ReactSpringBackground />
     </div>
 }
 

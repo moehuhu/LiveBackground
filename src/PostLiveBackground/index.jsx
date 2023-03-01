@@ -22,7 +22,7 @@ const App = () => {
     const typeWriter = <div className="typewriter">
         <Typewriter
             options={{
-                strings: ['下播咯', '天气转凉', '注意保暖', '多喝热水', '增添衣物'],
+                strings: ['下播咯', '春天到了', '气温波动', '调整衣物', '多喝热水'],
                 autoStart: true,
                 loop: true,
                 cursor: '...'

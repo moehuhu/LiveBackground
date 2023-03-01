@@ -13,7 +13,7 @@ const RenderCanvas = ({ count = 200, depth = 80 }) => {
     canvasElement?.addEventListener("webglcontextlost", () => window.location.reload())
     const blue = "#8abff4"
     const night = "#461d6b"
-    const color = <color attach="background" args={[night]} />
+    const color = <color attach="background" args={[blue]} />
     return (
         <Canvas
             shadows

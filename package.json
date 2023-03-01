@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.1",
     "@react-three/cannon": "^6.4.0",
     "@react-three/drei": "^9.38.1",
     "@react-three/fiber": "^8.8.10",
     "@react-three/postprocessing": "^2.7.0",
     "ahooks": "^3.7.2",
     "antd": "^4.23.6",
+    "framer-motion": "^10.0.1",
     "lamina": "^1.1.23",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
@@ -22,6 +24,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
+    "react-svg": "^16.1.4",
     "three": "^0.146.0",
     "three-stdlib": "^2.17.3",
     "three-subdivide": "^1.1.1",

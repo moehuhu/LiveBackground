@@ -45,7 +45,7 @@ const RenderCanvas = ({ count = 200, depth = 80 }) => {
     canvasElement?.addEventListener("webglcontextlost", () => window.location.reload())
     const blue = "#8abff4"
     const night = "#461d6b"
-    const color = <color attach="background" args={[night]} />
+    const color = <color attach="background" args={[blue]} />
 
     const light = <>
         <spotLight position={[50, 10, 10]} penumbra={1} intensity={1} />
