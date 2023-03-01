@@ -22,7 +22,7 @@ import SVGContainer from './SVGContainer'
 const RenderSpringCanvas = (props) => {
     const blue = "#8abff4"
     const night = "#461d6b"
-    const count = 80
+    const count = 60
     const [svgList, setSVGList] = useState([
         sleep,
         sun,
@@ -33,32 +33,14 @@ const RenderSpringCanvas = (props) => {
     const [indexList, setIndexList] = useState(Array.from({ length: count }, (item, i) => i % _.size(svgList)))
     const getCloudInstanceList = indexList => indexList?.map((item, i) => {
         const src = svgList[item]
-        const initialX = _.random(-10, 110, true)
-        const initialY = _.random(-10, 110, true)
-        const initialRotate = _.random(-15, 15, true)
-        const initialScale = _.random(0.4, 1.4, true)
-        const initialOpacity = _.random(0.1, 1, true)
-        const delta = _.random(0.05, 0.2, true)
 
         const style = {
             float: 'left',
             position: 'absolute',
         }
-        const initial = {
-            initialX,
-            initialY,
-            initialRotate,
-            initialScale,
-            initialOpacity,
-            delta
-        }
-        const animate = {}
-        const transition = {
-            duration: _.random(1, 100, true),
-            repeat: Infinity
-        }
+
         const key = item + '-' + i
-        return { style, initial, animate, transition, key, src }
+        return { style, key, src }
     })
     const [cloudInstance, setCloudInstance] = useState(getCloudInstanceList(indexList))
     return <div className='react-spring-background' style={{ background: blue }}>
