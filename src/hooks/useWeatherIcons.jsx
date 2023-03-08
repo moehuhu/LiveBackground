@@ -13,10 +13,10 @@ const useWeatherIcon = (props) => {
 
     const { day, night } = useDayNightPercent(props)
     const sunmoon = [...(day ? weatherGroup['sun'] : []), ...(night ? weatherGroup['lune'] : []),]
-    const multIcons = (icons, mult = 1) => _.times(mult, i => icons).flat().values()
+    const multIcons = (icons, mult = 1) => _.times(mult, i => icons).flat()
     const dayNight = (icons, mult = 1) => [...sunmoon, ...multIcons(icons, mult)]
     const cloud = weatherGroup['cloud']
-    const cloudy = () => multIcons(cloud, _.toInteger(weather?.cloudrate * 10) || 1)
+    const cloudy = () => multIcons(cloud, _.toInteger(weather?.cloudrate * 10))
     const haze = weatherGroup['haze']
     const rain = weatherGroup['rain']
     const fog = weatherGroup['fog']
@@ -51,7 +51,7 @@ const useWeatherIcon = (props) => {
         }
         return weather?.skycon ? icons[weather.skycon] : cloudy()
     }
-    const list = Array.from(getIconList() || [])?.map(svg => svg.href)
+    const list = (getIconList() || [])?.map(svg => svg.href)
     return list
 }
 

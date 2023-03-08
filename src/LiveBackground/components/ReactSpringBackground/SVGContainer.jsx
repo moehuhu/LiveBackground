@@ -58,6 +58,6 @@ const SVGContainer = (props) => {
         opacity,
     }
     const animatedWrapper = (component) => <motion.div className={props.className} style={newStyle}>{component}</motion.div>
-    return animatedWrapper(<ReactSVG src={src} />)
+    return animatedWrapper(src ? <ReactSVG src={src} /> : <></>)
 }
 export default SVGContainer
