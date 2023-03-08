@@ -1,14 +1,16 @@
 import _ from 'lodash'
-import { useInterval, useTimeout } from 'ahooks'
+import { useInterval } from 'ahooks'
 import { useState } from 'react'
 import moment from 'moment'
 import Typewriter from 'typewriter-effect';
 import './style.less'
 import ThreeDBackground from './components/ThreeBackground'
 import ReactSpringBackground from './components/ReactSpringBackground'
+
 const App = () => {
     const [time, setTime] = useState('')
     useInterval(() => { setTime(moment().format('HH:mm:ss')) }, 500)
+
     const taskbar = (component) => <div className="taskbar"  >
         <div className='components'>{component}</div>
         <div className="taskbar-highlight" />
