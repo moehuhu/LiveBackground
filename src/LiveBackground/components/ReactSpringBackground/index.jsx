@@ -20,7 +20,7 @@ const RenderSpringCanvas = (props) => {
     const background = useSuncalcColor()
     const count = 80
     const svgList = useWeatherIcons()
-    const [indexList, setIndexList] = useState(Array.from({ length: count }, (item, i) => i % _.size(svgList)))
+    const indexList = Array.from({ length: count }, (item, i) => i % _.size(svgList))
     const getCloudInstanceList = indexList => indexList?.map((item, i) => {
         const src = svgList[item]
 
@@ -32,7 +32,7 @@ const RenderSpringCanvas = (props) => {
         const key = item + '-' + i
         return { style, key, src }
     })
-    const [cloudInstance, setCloudInstance] = useState(getCloudInstanceList(indexList))
+    const cloudInstance = getCloudInstanceList(indexList)
     return <div className='react-spring-background' style={{ background }}>
         {cloudInstance?.map(props => <SVGContainer className={'svg-icon'} {...props} />)}
     </div>
