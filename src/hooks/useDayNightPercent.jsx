@@ -16,7 +16,7 @@ const useDayNightPercent = (props) => {
     const sunsetPercent = now.diff(sunsetStart) / dusk.diff(sunsetStart)
     return [
         { day: 1, night: 0 },
-        { day: sunrisePercent, night: 1 - sunsetPercent },
+        { day: sunrisePercent, night: 1 - sunrisePercent },
         { day: 1, night: 0 },
         { day: 1 - sunsetPercent, night: sunsetPercent },
         { day: 0, night: 1 }
