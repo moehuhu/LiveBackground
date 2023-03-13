@@ -12,11 +12,13 @@ const useWeatherIcon = (props) => {
     const weatherGroup = _(svgList).groupBy(getWeatherCategory).mapValues(sorter).value()
 
     const { day, night } = useDayNightPercent(props)
-    const sunmoon = [...(day ? weatherGroup['sun'] : []), ...(night ? weatherGroup['lune'] : []),]
+    const sunmoon = [...(day > 0.2 ? weatherGroup['sun'] : []), ...(night > 0.2 ? weatherGroup['lune'] : []),]
     const multIcons = (icons, mult = 1) => _.times(mult, i => icons).flat()
     const dayNight = (icons, mult = 1) => [...sunmoon, ...multIcons(icons, mult)]
     const cloud = weatherGroup['cloud']
     const cloudy = () => multIcons(cloud, _.toInteger(weather?.cloudrate * 10))
+    const star = weatherGroup['star']
+    const stars = () => [...(night > 0.2 ? star : [])]
     const haze = weatherGroup['haze']
     const rain = weatherGroup['rain']
     const fog = weatherGroup['fog']
@@ -29,7 +31,7 @@ const useWeatherIcon = (props) => {
     const getIconList = () => {
         const icons = {
             'CLEAR_DAY': dayNight(cloudy()),
-            'CLEAR_NIGHT': dayNight(cloudy()),
+            'CLEAR_NIGHT': dayNight([...cloudy(), ...stars()]),
             'PARTLY_CLOUDY_DAY': dayNight(cloudy()),
             'PARTLY_CLOUDY_NIGHT': dayNight(cloudy()),
             'CLOUDY': cloudy(),
