@@ -4,11 +4,12 @@ import { useState } from 'react'
 import moment from 'moment'
 import Typewriter from 'typewriter-effect';
 import './style.less'
+import ReactSpringBackground from '../components/ReactSpringBackground'
 import ThreeDBackground from '../usedComponents/ThreeBackground'
 const App = () => {
     const [time, setTime] = useState('')
     useInterval(() => { setTime(moment().format('HH:mm:ss')) }, 500)
-    useTimeout(() => window.location.reload(), 600000)
+
     const taskbar = (component) => <div className="taskbar"  >
         <div className='components'>{component}</div>
         <div className="taskbar-highlight" />
@@ -33,7 +34,7 @@ const App = () => {
     return <div className="pre-live-background">
         {sidebar()}
         {taskbar(<>{typeWriter}{timeClock}</>)}
-        <ThreeDBackground />
+        <ReactSpringBackground />
     </div>
 }
 
