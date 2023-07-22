@@ -4,7 +4,7 @@ import { useState } from 'react'
 import moment from 'moment'
 import Typewriter from 'typewriter-effect';
 import './style.less'
-import ThreeDBackground from './components/ThreeBackground'
+import ThreeDBackground from '../usedComponents/ThreeCloudBackground'
 import ReactSpringBackground from './components/ReactSpringBackground'
 
 const App = () => {

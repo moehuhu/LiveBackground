@@ -4,7 +4,7 @@ import { useState } from 'react'
 import moment from 'moment'
 import Typewriter from 'typewriter-effect';
 import './style.less'
-import ThreeDBackground from './components/ThreeBackground'
+import ThreeDBackground from '../usedComponents/ThreeCloudBackground'
 const App = () => {
     const [time, setTime] = useState('')
     useInterval(() => { setTime(moment().format('HH:mm:ss')) }, 500)

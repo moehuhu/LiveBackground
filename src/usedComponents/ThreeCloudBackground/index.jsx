@@ -6,9 +6,9 @@ import { ObjectContainer } from './ObjectContainer'
 
 import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing'
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader'
-import cloud1 from '../../../assets/svgs/weather/cloud1.svg'
-import cloud2 from '../../../assets/svgs/weather/cloud2.svg'
-import cloud3 from '../../../assets/svgs/weather/cloud3.svg'
+import cloud1 from '../../assets/svgs/weather/cloud1.svg'
+import cloud2 from '../../assets/svgs/weather/cloud2.svg'
+import cloud3 from '../../assets/svgs/weather/cloud3.svg'
 import { useCallback } from 'react'
 const material = new THREE.MeshLambertMaterial();
 
