@@ -5,7 +5,7 @@ import moment from 'moment'
 import Typewriter from 'typewriter-effect';
 import './style.less'
 import ThreeDBackground from '../usedComponents/ThreeCloudBackground'
-import ReactSpringBackground from './components/ReactSpringBackground'
+import ReactSpringBackground from '../components/ReactSpringBackground'
 
 const App = () => {
     const [time, setTime] = useState('')
