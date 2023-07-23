@@ -1,6 +1,5 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
-import ssr from 'vite-plugin-ssr/plugin'
 import requireTransform from 'vite-plugin-require-transform';
 
 
@@ -9,7 +8,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   console.log(env);
   return {
-    plugins: [react(), requireTransform.default({}), ssr()],
+    plugins: [react(), requireTransform.default({})],
     assetsInclude: ['**/*.gltf', '**/*.glb'],
     server: {
       port: 3000,
