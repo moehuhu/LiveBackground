@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import requireTransform from 'vite-plugin-require-transform';
 const { env } = process
+console.log(env);
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,7 +12,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/weather': {
-        target: `https://api.caiyunapp.com/v2.6/${env?.TOKEN}`,
+        target: `https://api.caiyunapp.com/v2.6/${env?.WEATHER_TOKEN}`,
         changeOrigin: true,
         rewrite: path => path.replace(/^\/weather/, ''),
         configure: (proxy, options) => {
