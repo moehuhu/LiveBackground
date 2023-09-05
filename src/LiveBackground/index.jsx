@@ -22,13 +22,10 @@ const App = () => {
         <div className="sidebar-blur" />
     </div>
     const strings = [
-        '春天到了 气温波动',
-        '调整衣物 多喝热水',
-        '不要在无关的直播间刷主播',
-        '理性消费 鼓励白嫖 欢迎辣条',
-        '打多了主播点名批评',
-        '舰长记得及时退包月',
-        '未成年人快去学习'
+        '季节更替 调整衣物',
+        '理性消费 记得关注',
+        '多喝热水 走出户外',
+        '生活明朗 万物可爱',
     ]
     const typeWriter = <div className="typewriter">
         <Typewriter
